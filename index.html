@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice</title>
+  <!--script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+  <script>
+    // VConsole will be exported to `window.VConsole` by default.
+    var vConsole = new window.VConsole();
+  </script-->
+  <script src="./js/environment.js"></script>
+  <script src="./js/project.js" type="module" defer></script>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <header>Dice</header>
+  <section class="card primary">
+    <div id="dices">
+      <div id="first-dice" class="dice-container">
+        <img src="img/dice/1.svg" alt="Dice 1" class="dice dice1" />
+        <img src="img/dice/2.svg" alt="Dice 2" class="dice dice2" />
+        <img src="img/dice/3.svg" alt="Dice 3" class="dice dice3" />
+        <img src="img/dice/4.svg" alt="Dice 4" class="dice dice4" />
+        <img src="img/dice/5.svg" alt="Dice 5" class="dice dice5" />
+        <img src="img/dice/6.svg" alt="Dice 6" class="dice dice6" />
+      </div>
+      <div id="second-dice" class="dice-container">
+        <img src="img/dice/1.svg" alt="Dice 1" class="dice dice1" />
+        <img src="img/dice/2.svg" alt="Dice 2" class="dice dice2" />
+        <img src="img/dice/3.svg" alt="Dice 3" class="dice dice3" />
+        <img src="img/dice/4.svg" alt="Dice 4" class="dice dice4" />
+        <img src="img/dice/5.svg" alt="Dice 5" class="dice dice5" />
+        <img src="img/dice/6.svg" alt="Dice 6" class="dice dice6" />
+      </div>
+    </div>
+    <div id="your-turn" class="turn-hint">
+      <h1>Your Turn</h1>
+    </div>
+    <div id="computer-turn" class="turn-hint">
+      <h1>Computer Turn</h1>
+    </div>
+    <div id="roll">
+      <h1>Roll</h1>
+    </div>
+  </section>
+  <section class="card" id="score">
+    <h1>Player</h1>
+    <span class="player-score">0</span>
+    <span>+</span>
+    <span class="player-score">0</span>
+    <span>+</span>
+    <span class="player-score">0</span>
+    <span>=</span>
+    <span id="player-total-score">0</span>
+    <h1>Computer</h1>
+    <span class="computer-score">0</span>
+    <span>+</span>
+    <span class="computer-score">0</span>
+    <span>+</span>
+    <span class="computer-score">0</span>
+    <span>=</span>
+    <span id="computer-total-score">0</span>
+  </section>
+  <div id="victory" class="game-result">
+    <h1>Victory</h1>
+  </div>
+  <div id="defeat" class="game-result">
+    <h1>Defeat</h1>
+  </div>
+  <div id="tie" class="game-result">
+    <h1>Tie</h1>
+  </div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: block;
+  border-bottom: 1px solid #777;
+  font-size: 24px;
+  text-align: center;
+}
+
+.card {
+  display: block;
+  max-width: 500px;
+  border: 1px solid #777;
+  box-shadow: 0px 5px 10px #777;
+  margin: 20px auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.card.primary {
+  height: 400px;
+  padding: 0;
+  display: grid;
+}
+
+.card>div {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.dice {
+  width: 120px;
+  margin: 10px;
+  display: none;
+}
+
+.dice.show {
+  display: inline-block;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-200%);
+  }
+}
+
+#first-dice>.dice {
+  animation: slideDown 0.7s;
+}
+
+#second-dice>.dice {
+  animation: slideDown 1s;
+}
+
+.dice-container {
+  display: inline-block;
+}
+
+#dices {
+  width: fit-content;
+  margin: 125px auto;
+  display: none;
+}
+
+#dices.show {
+  display: block;
+}
+
+@keyframes slideThrough {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(10%);
+  }
+  80% {
+    transform: translateX(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.turn-hint {
+  display: none;
+  margin: 0 -10%;
+  width: 120%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  font-size: 40px;
+  animation: slideThrough linear 1.5s;
+  opacity: 0;
+  z-index: 1;
+}
+
+.turn-hint.show {
+  display: grid;
+}
+
+#your-turn {
+  background: #9fc;
+}
+
+#computer-turn {
+  background: #99f;
+}
+
+.game-result {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10vw;
+  padding: 50vh 0;
+  display: none;
+  animation: slideDown 1s;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.game-result.show {
+  display: block;
+}
+
+.game-result>h1 {
+  margin: 0 auto;
+  width: fit-content;
+  line-height: 0;
+}
+
+#victory {
+  background: rgba(255, 0, 0, 0.8);
+  color: #ff0;
+}
+
+#defeat {
+  background: rgba(100, 0, 170, 0.8);
+  color: #000;
+}
+
+#tie {
+  background: rgba(200, 200, 200, 0.8);
+  color: #000;
+}
+
+@keyframes zoom {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+#roll {
+  display: none;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  font-size: 40px;
+  animation: zoom 1s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+#roll.show {
+  display: grid;
+}
+
+#score {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#score>h1 {
+  grid-column: 1 / 8;
+  margin: 0;
+}
+
+@keyframes flash {
+  50% {
+    opacity: 0;
+  }
+}
+
+.current {
+  animation: flash 1s;
+  animation-iteration-count: infinite;
+}
